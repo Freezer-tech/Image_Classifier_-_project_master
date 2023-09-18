@@ -54,22 +54,13 @@ def main():
     # Load and preprocess data 
     trainloader, testloader, validloader, train_data, test_data, valid_data = load_data(data_dir)
     
-    # Carica il modello preaddestrato
+    # Upload pretrained model
     model = getattr(models, arch)(pretrained=True)
 
     # Build and attach new classifier
     input_units = model.classifier[0].in_features
     model = build_classifier(model, input_units, hidden_units, dropout)
-    """
-    input_units = model.classifier[0].in_features
-    model.classifier = nn.Sequential(
-    nn.Linear(input_units, hidden_units),
-    nn.ReLU(),
-    nn.Dropout(dropout),
-    nn.Linear(hidden_units, 102),
-    nn.LogSoftmax(dim=1)
-    )
-    """
+
     # Recommended to use NLLLoss when using Softmax
     criterion = nn.NLLLoss()
     # Using Adam optimiser which makes use of momentum to avoid local minima
