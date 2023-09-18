@@ -1,12 +1,12 @@
 # AI Programming with Python Project
 
-Project code for Udacity's AI Programming with Python Nanodegree program. In this project I developed code for an image classifier built with PyTorch, then convert it into a command line application.
+This is the second project for Udacity's Nanodegree program on artificial intelligence programming with the Python programming language. In this project I wrote code to run an image classifier built with PyTorch, and then convert it to a command-line application.
 
-# What does it do?
+## What does it do?
 
-The project trains a model to classify different flowers for each type. It then makes a prediction of the flower by showing the accuracy
+The project trains a model using a dataset for the AI to recognize the type of flower. Then this model, is used to predict the flower type from an image path, also showing the accuracy percentage
 
-# What is needed?
+## What is needed?
 
 conda env create -f environment.yaml
 pip install -r requirement.txt
@@ -15,7 +15,7 @@ The model has been trained on [this dataset](https://www.robots.ox.ac.uk/~vgg/da
 
 The folder flowers must be on the same folder of other files
 
-# Usage
+## Usage
 
 python train.py 
 
@@ -27,7 +27,7 @@ python predict.py
  [-h] --image_dir IMAGE_DIR [--arch PRETRAINED_MODEL] [--load_dir CHECKPOINT] [--top_k TOPK]
                   [--category_names CATEGORY_NAMES] [--gpu]
 
-# Example
+## Example
 
 python train.py flowers --arch vgg11 --save_dir checkpoint.pth --learning_rate 0.001 --dropout 0.2 --hidden_units 512 --epochs 4 --gpu
 
